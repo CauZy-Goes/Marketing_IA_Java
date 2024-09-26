@@ -19,6 +19,14 @@ public abstract class areaInvestimento {
         areaInvestimento.orcamento = orcamento;
     }
 
+    public Integer getQtdInvestimento() {
+        return qtdInvestimento;
+    }
+
+    public void setQtdInvestimento(Integer qtdInvestimento) {
+        this.qtdInvestimento = qtdInvestimento;
+    }
+
     public static Double getOrcamento() {
         return orcamento;
     }
