@@ -1,21 +1,25 @@
 package IA;
 
 import IA.acoes.buscaDeCustoUniforme;
-import IA.acoes.investir;
-import estados.areaInvestimento;
+import IA.acoes.Investir;
+import estados.AreaInvestimento;
 
 import java.util.List;
 
 public class operacao {
 
-    public static String iniciarDistribuicao(List<areaInvestimento> listaDeAreaInvestimento, areaInvestimento estadoFinal){
+    public static String iniciarDistribuicao(List<AreaInvestimento> listaDeAreaInvestimento, AreaInvestimento estadoFinal){
 
         Boolean sair = false;
 
 
-        while(sair){
-            areaInvestimento melhorArea = buscaDeCustoUniforme.buscaDeCustoUniforme(listaDeAreaInvestimento);
-            investir.investir(melhorArea);
+        while(!sair){
+            AreaInvestimento melhorArea = buscaDeCustoUniforme.buscaDeCustoUniforme(listaDeAreaInvestimento);
+            Investir.investir(melhorArea);
+            System.out.println(melhorArea);
+            System.out.println();
+            System.out.println("Orcamento Restante : " + AreaInvestimento.getOrcamento());
+            System.out.println();
             sair = estadoFinal.equals(melhorArea);
         }
 

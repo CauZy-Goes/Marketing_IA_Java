@@ -2,10 +2,10 @@ package IA.funcoes;
 
 public class custoDoCaminho {
 
-    public static int novaEstimativaDeRetorno(int qtsInvestimento, int retornoInicial ) {
+    public static double novaEstimativaDeRetorno(int qtsInvestimento, double retornoInicial ) {
         double estimativaDeReducao = 0.05 * qtsInvestimento;
 
-        int novoRetorno = (int) (retornoInicial * (1 - estimativaDeReducao));
+        double novoRetorno =  (retornoInicial * (1 - estimativaDeReducao));
 
         return novoRetorno;
     }

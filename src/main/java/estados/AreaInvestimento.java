@@ -1,32 +1,32 @@
 package estados;
 
-public abstract class areaInvestimento {
+public class AreaInvestimento {
     private static Integer idSerial = 0;
     private static Double orcamento;
 
     protected Integer id;
-    protected Integer retornoInvestimento;
+    protected Double retornoInvestimento;
     protected Double custoInvestimento;
     protected Integer qtdInvestimento;
     protected String nome;
     protected double orcamentoFinal;
 
-    public areaInvestimento(Double orcamentoFinal) {
+    public AreaInvestimento(Double orcamentoFinal) {
         this.orcamentoFinal = orcamentoFinal;
     }
 
-    public areaInvestimento(Integer id, Integer retornoInvestimento, Double custoInvestimento, Integer qtdInvestimento, Double orcamento) {
+    public AreaInvestimento(Double retornoInvestimento, Double custoInvestimento, Integer qtdInvestimento, Double orcamento) {
         idSerial ++;
         this.id = idSerial;
         this.retornoInvestimento = retornoInvestimento;
         this.custoInvestimento = custoInvestimento;
         this.qtdInvestimento = qtdInvestimento;
-        areaInvestimento.orcamento = orcamento;
+        AreaInvestimento.orcamento = orcamento;
         orcamentoFinal = 0;
     }
 
-    public Boolean equals(areaInvestimento obj) {
-        if(this.orcamentoFinal == obj.orcamentoFinal) {
+    public Boolean equals(AreaInvestimento obj) {
+        if(this.orcamentoFinal == obj. getOrcamento()) {
             return true;
         }
         return false;
@@ -45,7 +45,7 @@ public abstract class areaInvestimento {
     }
 
     public static void setOrcamento(Double orcamento) {
-        areaInvestimento.orcamento = orcamento;
+        AreaInvestimento.orcamento = orcamento;
     }
 
     public Integer getId() {
@@ -60,11 +60,11 @@ public abstract class areaInvestimento {
         this.custoInvestimento = custoInvestimento;
     }
 
-    public Integer getRetornoInvestimento() {
+    public Double getRetornoInvestimento() {
         return retornoInvestimento;
     }
 
-    public void setRetornoInvestimento(Integer retornoInvestimento) {
+    public void setRetornoInvestimento(Double retornoInvestimento) {
         this.retornoInvestimento = retornoInvestimento;
     }
 
@@ -74,11 +74,7 @@ public abstract class areaInvestimento {
 
     @Override
     public String toString() {
-        return "areaInvestimento{" +
-                "id=" + id +
-                ", retornoInvestimento=" + retornoInvestimento +
-                ", custoInvestimento=" + custoInvestimento +
-                ", nome='" + nome + '\'' +
-                '}';
+        return "Área : " + nome + "Id = " + id + ", Retorno Do Investimento = " + retornoInvestimento +
+                ", Quantidade De Investimentos" + qtdInvestimento;
     }
 }
