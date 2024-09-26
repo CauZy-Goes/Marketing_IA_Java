@@ -1,16 +1,20 @@
 package estados;
 
 public abstract class areaInvestimento {
+    private static Integer idSerial = 0;
 
     protected Integer id;
     protected Integer retornoInvestimento;
     protected Float custoInvestimento;
     protected String nome;
+    protected Integer qtdInvestimento;
 
-    public areaInvestimento(Integer id, Integer retornoInvestimento, Float custoInvestimento) {
-        this.id = id;
+    public areaInvestimento(Integer id, Integer retornoInvestimento, Float custoInvestimento, Integer qtdInvestimento) {
+        idSerial ++;
+        this.id = idSerial;
         this.retornoInvestimento = retornoInvestimento;
         this.custoInvestimento = custoInvestimento;
+        this.qtdInvestimento = qtdInvestimento;
     }
 
     public Integer getId() {
