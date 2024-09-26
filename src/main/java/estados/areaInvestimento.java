@@ -9,6 +9,11 @@ public abstract class areaInvestimento {
     protected Double custoInvestimento;
     protected Integer qtdInvestimento;
     protected String nome;
+    protected double orcamentoFinal;
+
+    public areaInvestimento(Double orcamentoFinal) {
+        this.orcamentoFinal = orcamentoFinal;
+    }
 
     public areaInvestimento(Integer id, Integer retornoInvestimento, Double custoInvestimento, Integer qtdInvestimento, Double orcamento) {
         idSerial ++;
@@ -17,6 +22,14 @@ public abstract class areaInvestimento {
         this.custoInvestimento = custoInvestimento;
         this.qtdInvestimento = qtdInvestimento;
         areaInvestimento.orcamento = orcamento;
+        orcamentoFinal = 0;
+    }
+
+    public Boolean equals(areaInvestimento obj) {
+        if(this.orcamentoFinal == obj.orcamentoFinal) {
+            return true;
+        }
+        return false;
     }
 
     public Integer getQtdInvestimento() {
