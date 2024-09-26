@@ -2,30 +2,40 @@ package estados;
 
 public abstract class areaInvestimento {
     private static Integer idSerial = 0;
+    private static Double orcamento;
 
     protected Integer id;
     protected Integer retornoInvestimento;
-    protected Float custoInvestimento;
-    protected String nome;
+    protected Double custoInvestimento;
     protected Integer qtdInvestimento;
+    protected String nome;
 
-    public areaInvestimento(Integer id, Integer retornoInvestimento, Float custoInvestimento, Integer qtdInvestimento) {
+    public areaInvestimento(Integer id, Integer retornoInvestimento, Double custoInvestimento, Integer qtdInvestimento, Double orcamento) {
         idSerial ++;
         this.id = idSerial;
         this.retornoInvestimento = retornoInvestimento;
         this.custoInvestimento = custoInvestimento;
         this.qtdInvestimento = qtdInvestimento;
+        areaInvestimento.orcamento = orcamento;
+    }
+
+    public static Double getOrcamento() {
+        return orcamento;
+    }
+
+    public static void setOrcamento(Double orcamento) {
+        areaInvestimento.orcamento = orcamento;
     }
 
     public Integer getId() {
         return id;
     }
 
-    public Float getCustoInvestimento() {
+    public Double getCustoInvestimento() {
         return custoInvestimento;
     }
 
-    public void setCustoInvestimento(Float custoInvestimento) {
+    public void setCustoInvestimento(Double custoInvestimento) {
         this.custoInvestimento = custoInvestimento;
     }
 
