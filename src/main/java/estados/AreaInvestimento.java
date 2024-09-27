@@ -75,6 +75,6 @@ public class AreaInvestimento {
     @Override
     public String toString() {
         return "Área : " + nome + "Id = " + id + ", Retorno Do Investimento = " + retornoInvestimento +
-                ", Quantidade De Investimentos" + qtdInvestimento;
+                ", Quantidade De Investimentos = " + qtdInvestimento;
     }
 }
