@@ -2,8 +2,8 @@ package estados;
 
 public class Tv extends AreaInvestimento {
 
-    public Tv( Double retornoInvestimento, Double custoInvestimento, Integer qtdInvestimento, Double orcamento) {
-        super( retornoInvestimento, custoInvestimento, qtdInvestimento,orcamento);
+    public Tv( Double retornoInvestimento, Double custoInvestimento) {
+        super( retornoInvestimento, custoInvestimento);
         nome = "Tv";
     }
 }

@@ -13,12 +13,14 @@ public static void main(String[] args) {
 
     List<AreaInvestimento> listaDeAreasInvestimentos = new ArrayList<AreaInvestimento>();
 
-    AreaInvestimento redesSociais = new RedesSociais(1400.00,1000.00,0, 3000.00);
+    AreaInvestimento redesSociais = new RedesSociais(1400.00,1300.00);
     listaDeAreasInvestimentos.add(redesSociais);
-    AreaInvestimento tv = new Tv(600.00,500.00,0, 3000.00);
+    AreaInvestimento tv = new Tv(600.00,500.00);
     listaDeAreasInvestimentos.add(tv);
-    AreaInvestimento site = new Site(500.00,20.00,0, 3000.00);
+    AreaInvestimento site = new Site(500.00,500.00);
     listaDeAreasInvestimentos.add(site);
+
+    AreaInvestimento.setOrcamento(30000.00);
 
     AreaInvestimento estadoFinal = new AreaInvestimento(0.00);
 

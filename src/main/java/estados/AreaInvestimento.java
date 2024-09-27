@@ -15,13 +15,12 @@ public class AreaInvestimento {
         this.orcamentoFinal = orcamentoFinal;
     }
 
-    public AreaInvestimento(Double retornoInvestimento, Double custoInvestimento, Integer qtdInvestimento, Double orcamento) {
+    public AreaInvestimento(Double retornoInvestimento, Double custoInvestimento) {
         idSerial ++;
         this.id = idSerial;
         this.retornoInvestimento = retornoInvestimento;
         this.custoInvestimento = custoInvestimento;
-        this.qtdInvestimento = qtdInvestimento;
-        AreaInvestimento.orcamento = orcamento;
+        setQtdInvestimento(0);
         orcamentoFinal = 0;
     }
 
@@ -74,7 +73,7 @@ public class AreaInvestimento {
 
     @Override
     public String toString() {
-        return "Área : " + nome + "Id = " + id + ", Retorno Do Investimento = " + retornoInvestimento +
+        return "Área : " + nome + ", Id = " + id + ", Retorno Do Investimento = " + retornoInvestimento +
                 ", Quantidade De Investimentos = " + qtdInvestimento;
     }
 }
