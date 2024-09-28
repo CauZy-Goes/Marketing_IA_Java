@@ -1,6 +1,7 @@
 package estados;
 
 public class AreaInvestimento {
+
     private static Integer idSerial = 0;
     private static Double orcamento;
 
@@ -71,9 +72,12 @@ public class AreaInvestimento {
         return nome;
     }
 
+    public static void setIdSerial(Integer idSerial) {
+        AreaInvestimento.idSerial = idSerial;
+    }
+
     @Override
     public String toString() {
-        return "Área : " + nome + ", Id = " + id + ", Retorno Do Investimento = " + retornoInvestimento +
-                ", Quantidade De Investimentos = " + qtdInvestimento;
+        return " " + qtdInvestimento + " ";
     }
 }
