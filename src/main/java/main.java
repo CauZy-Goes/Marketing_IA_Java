@@ -100,13 +100,19 @@ public static void main(String[] args) {
         System.out.println("");
         AreaInvestimento.setIdSerial(0);
     }
+
+    int quantidadeDeinvestimentosTotal = 0;
     System.out.println("");
     System.out.println("");
     System.out.println("Area 1 quantidade de investimentos");
     System.out.println("");
     for ( int i = 0; i < listaDeQtdInvestimentoArea1.size(); i++){
         System.out.print(listaDeQtdInvestimentoArea1.get(i));
+        quantidadeDeinvestimentosTotal += listaDeQtdInvestimentoArea1.get(i);
     }
+    System.out.println("");
+    System.out.println(" O total de investimentos na area 1 nesses 100 teste foi : " + quantidadeDeinvestimentosTotal);
+    quantidadeDeinvestimentosTotal = 0;
     System.out.println("");
     System.out.println("");
     System.out.println("Area 1 heuristicas");
@@ -120,7 +126,11 @@ public static void main(String[] args) {
     System.out.println("");
     for ( int i = 0; i < listaDeQtdInvestimentoArea2.size(); i++){
         System.out.print(listaDeQtdInvestimentoArea2.get(i));
+        quantidadeDeinvestimentosTotal += listaDeQtdInvestimentoArea2.get(i);
     }
+    System.out.println("");
+    System.out.println(" O total de investimentos na area 2 nesses 100 teste foi : " + quantidadeDeinvestimentosTotal);
+    quantidadeDeinvestimentosTotal = 0;
     System.out.println("");
     System.out.println("");
     System.out.println("Area 2 heuristicas");
@@ -134,7 +144,11 @@ public static void main(String[] args) {
     System.out.println("");
     for ( int i = 0; i < listaDeQtdInvestimentoArea3.size(); i++){
         System.out.print(listaDeQtdInvestimentoArea3.get(i));
+        quantidadeDeinvestimentosTotal += listaDeQtdInvestimentoArea3.get(i);
     }
+    System.out.println("");
+    System.out.println(" O total de investimentos na area 2 nesses 100 teste foi : " + quantidadeDeinvestimentosTotal);
+    quantidadeDeinvestimentosTotal = 0;
     System.out.println("");
     System.out.println("");
     System.out.println("Area 3 heuristicas");
