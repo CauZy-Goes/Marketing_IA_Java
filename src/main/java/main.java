@@ -5,7 +5,6 @@ import estados.RedesSociais;
 import estados.Site;
 import estados.Tv;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -19,8 +18,11 @@ public static void main(String[] args) {
     double randomDoubleInvestimento;
     double randomDoubleRetorno;
 
-    double min = 300.0;
-    double max = 400.0;
+    double minRetorno = 300.0;
+    double maxRetorno = 400.0;
+
+    double minCusto = 100.0;
+    double maxCusto = 200.0;
 
     List<Integer> listaDeQtdInvestimentoArea1 = new ArrayList<Integer>();
     List<Integer> listaDeQtdInvestimentoArea2 = new ArrayList<Integer>();
@@ -35,19 +37,18 @@ public static void main(String[] args) {
         System.out.println("A1   A2  A3  |  A1   A2    A3   |       A1               A2             A3");
         List<AreaInvestimento> listaDeAreasInvestimentos = new ArrayList<AreaInvestimento>();
 
-        // Gera um número double entre 300 e 1000
-        randomDoubleInvestimento = min + (max - min) * random.nextDouble();
-        randomDoubleRetorno = min + (max - min) * random.nextDouble();
+        randomDoubleRetorno = minRetorno + (maxRetorno - minRetorno) * random.nextDouble();
+        randomDoubleInvestimento = minCusto + (maxCusto - minCusto) * random.nextDouble();
 
         AreaInvestimento redesSociais = new RedesSociais(randomDoubleRetorno,randomDoubleInvestimento);
         listaDeAreasInvestimentos.add(redesSociais);
-        randomDoubleInvestimento = min + (max - min) * random.nextDouble();
-        randomDoubleRetorno = min + (max - min) * random.nextDouble();
+        randomDoubleRetorno = minRetorno + (maxRetorno - minRetorno) * random.nextDouble();
+        randomDoubleInvestimento = minCusto + (maxCusto - minCusto) * random.nextDouble();
 
         AreaInvestimento tv = new Tv(randomDoubleRetorno,randomDoubleInvestimento);
         listaDeAreasInvestimentos.add(tv);
-        randomDoubleInvestimento = min + (max - min) * random.nextDouble();
-        randomDoubleRetorno = min + (max - min) * random.nextDouble();
+        randomDoubleRetorno = minRetorno + (maxRetorno - minRetorno) * random.nextDouble();
+        randomDoubleInvestimento = minCusto + (maxCusto - minCusto) * random.nextDouble();
 
         AreaInvestimento site = new Site(randomDoubleRetorno,randomDoubleInvestimento);
         listaDeAreasInvestimentos.add(site);
@@ -161,7 +162,7 @@ public static void main(String[] args) {
         quantidadeDeinvestimentosTotal += listaDeQtdInvestimentoArea3.get(i);
     }
     System.out.println("");
-    System.out.println(" O total de investimentos na area 2 nesses 100 teste foi : " + quantidadeDeinvestimentosTotal);
+    System.out.println(" O total de investimentos na area 3 nesses 100 teste foi : " + quantidadeDeinvestimentosTotal);
     quantidadeDeinvestimentosTotal = 0;
     System.out.println("");
     System.out.println("");
