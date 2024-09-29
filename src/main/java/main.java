@@ -26,9 +26,9 @@ public static void main(String[] args) {
     List<Integer> listaDeQtdInvestimentoArea2 = new ArrayList<Integer>();
     List<Integer> listaDeQtdInvestimentoArea3 = new ArrayList<Integer>();
 
-    List<String> heuristicaArea1 = new ArrayList();
-    List<String> heuristicaArea2 = new ArrayList();
-    List<String> heuristicaArea3 = new ArrayList();
+    List<Double> heuristicaArea1 = new ArrayList();
+    List<Double> heuristicaArea2 = new ArrayList();
+    List<Double> heuristicaArea3 = new ArrayList();
 
     System.out.println("QtdInvestimento| heuristica       |               retorno/custo       ");
     for (int i = 0; i < 100; i++) {
@@ -74,11 +74,11 @@ public static void main(String[] args) {
             heuristicaAreaAtual = heuristica.funcaoHeuristicaDeRRI(areaInvestimento.getCustoInvestimento(), areaInvestimento.getRetornoInvestimento());
             sbHeuristica.append( String.format("%.2f",heuristicaAreaAtual) + "  ");
             if (areaInvestimento.getId() == 1){
-                heuristicaArea1.add(String.format("%.2f",  heuristicaAreaAtual));
+                heuristicaArea1.add(heuristicaAreaAtual);
             } else if (areaInvestimento.getId() == 2){
-                heuristicaArea2.add(String.format("%.2f",  heuristicaAreaAtual));
+                heuristicaArea2.add(heuristicaAreaAtual);
             } else if (areaInvestimento.getId() == 3){
-                heuristicaArea3.add(String.format("%.2f",  heuristicaAreaAtual));
+                heuristicaArea3.add(heuristicaAreaAtual);
             }
         }
 
@@ -102,6 +102,8 @@ public static void main(String[] args) {
     }
 
     int quantidadeDeinvestimentosTotal = 0;
+    double mediaDaHeuristica = 0;
+    int totalDeHeristicas = 0;
     System.out.println("");
     System.out.println("");
     System.out.println("Area 1 quantidade de investimentos");
@@ -118,8 +120,14 @@ public static void main(String[] args) {
     System.out.println("Area 1 heuristicas");
     System.out.println("");
     for ( int i = 0; i < heuristicaArea1.size(); i++){
-        System.out.print(heuristicaArea1.get(i) + " ");
+        System.out.print(String.format("%.2f",heuristicaArea1.get(i)) + " ");
+        totalDeHeristicas ++;
+        mediaDaHeuristica += heuristicaArea1.get(i);
     }
+    System.out.println("");
+    System.out.println("A Media Aritmética da heuristica da area 1 é = " + String.format("%.2f",mediaDaHeuristica/totalDeHeristicas ));
+    totalDeHeristicas = 0;
+    mediaDaHeuristica = 0;
     System.out.println("");
     System.out.println("");
     System.out.println("Area 2 quantidade de investimentos");
@@ -136,8 +144,14 @@ public static void main(String[] args) {
     System.out.println("Area 2 heuristicas");
     System.out.println("");
     for ( int i = 0; i < heuristicaArea2.size(); i++){
-        System.out.print(heuristicaArea2.get(i) + " ");
+        System.out.print(String.format("%.2f",heuristicaArea2.get(i)) + " ");
+        totalDeHeristicas ++;
+        mediaDaHeuristica += heuristicaArea2.get(i);
     }
+    System.out.println("");
+    System.out.println("A Media Aritmética da heuristica da area 2 é = " + String.format("%.2f",mediaDaHeuristica/totalDeHeristicas ));
+    totalDeHeristicas = 0;
+    mediaDaHeuristica = 0;
     System.out.println("");
     System.out.println("");
     System.out.println("Area 3 quantidade de investimentos");
@@ -154,7 +168,13 @@ public static void main(String[] args) {
     System.out.println("Area 3 heuristicas");
     System.out.println("");
     for ( int i = 0; i < heuristicaArea3.size(); i++){
-        System.out.print(heuristicaArea3.get(i) + " ");
+        System.out.print(String.format("%.2f",heuristicaArea3.get(i)) + " ");
+        totalDeHeristicas ++;
+        mediaDaHeuristica += heuristicaArea3.get(i);
     }
+    System.out.println("");
+    System.out.println("A Media Aritmética da heuristica da area 3 é = " + String.format("%.2f",mediaDaHeuristica/totalDeHeristicas ));
+    totalDeHeristicas = 0;
+    mediaDaHeuristica = 0;
 }
 }
